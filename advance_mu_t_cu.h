@@ -1,0 +1,33 @@
+
+
+void advance_mu_t( float *grid_ww, float *ww1, float *grid_u_2, 
+                  float *grid_u_save, float *grid_v_2, float *grid_v_save,
+                  float *grid_mu_2, float *grid_mut, float *muave, 
+                  float *grid_muts, float *grid_muu, float *grid_muv,
+                  float *grid_mudf,                                               
+                  float *grid_t_2, float *grid_t_save, float *t_2save, float *t_tend,                 
+                  float *mu_tend,                                                   
+                  float grid_rdx, float grid_rdy, float dts_rk, float grid_epssm,                    
+                  float *grid_dnw, float *grid_fnm, float *grid_fnp, float *grid_rdnw,                    
+                  float *grid_msfuy, float *grid_msfvx_inv,                                
+                  float *grid_msftx, float *grid_msfty,                                   
+                  config_flags config,                                           
+                  int ids, int ide, int jds, int jde, int kds, int kde,                               
+                  int ims, int ime, int jms, int jme, int kms, int kme,                        
+                  int its, int ite, int jts, int jte, int kts, int kte );
+                   
+__global__ void advance_mu_t_kernel( float * __restrict__ ww, float * __restrict__ ww_1, float * __restrict__ u, float * __restrict__ u_1, 
+                   float *v, float *v_1,            
+                   float * __restrict__ mu, float * __restrict__ mut, float * __restrict__ muave, float * __restrict__ muts, 
+                   float * __restrict__ muu,float * __restrict__ muv,
+                   float * __restrict__ mudf, float * __restrict__ t, float * __restrict__ t_1,                      
+                   float * __restrict__ t_ave, float * __restrict__ ft, float * __restrict__ mu_tend,                  
+                   float rdx, float rdy, float dts, float epssm,               
+                   float * __restrict__ dnw, float * __restrict__ fnm, float * __restrict__ fnp, float * __restrict__ rdnw,              
+                   float * __restrict__ msfuy, float * __restrict__ msfvx_inv,                 
+                   float * __restrict__ msftx, float * __restrict__ msfty,        
+                   float * __restrict__ wdtn, float * __restrict__ dvdxi, float * __restrict__ dmdt,          
+                   config_flags config,                      
+                   int ids, int ide, int jds, int jde, int kds, int kde,            
+                   int idim, int jdim, int kdim,     
+                   int its, int ite, int jts, int jte, int kts, int kte );
